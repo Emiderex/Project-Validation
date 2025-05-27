@@ -1,18 +1,40 @@
-// This is a simple JavaScript program that prompts the user for their name and password
-//userName
-let userName = prompt("Enter your name: ");
 
-function usersName(){
-    if (usersName >= 10){
-     return prompt("Enter your name: ");   
-    } 
+
+let username = prompt("Enter your name: ");
+validateUsername(username);
+
+let password = prompt("Enter your password:");
+console.log(validatePassword(password));
+
+
+function validateUsername(username){
+    if(username === null) {
+        return false
+    }
+
+    if(username === "") {
+        return false
+    }
+
+    if (username.length > 10) {
+        return false;
+    }else {
+        return true;
+    }
 }
 
-//userPassword
-let password = prompt("Enter your Password: ");
+function validatePassword(password) {
+    if (password === null){
+        return false;
+    }
 
-function userPassword(){
-    if (password.length >= 10){
-        return prompt("Enter your Password: ");
+    if (password === ""){
+        return false;
+    }
+
+    if (password.length < 6) {
+        return false;
+    } else {
+        return true;
     }
 }
